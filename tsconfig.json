@@ -18,6 +18,6 @@
         "experimentalDecorators": true,
         "moduleResolution": "Node"
     }, 
-    "exclude": ["node_modules"], 
+    "exclude": ["node_modules"]
 
 }
