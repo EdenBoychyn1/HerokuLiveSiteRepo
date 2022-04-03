@@ -2,10 +2,11 @@ namespace core
 {
     export class Contact
     {
-        // Private Instance Members
+        // private instance members
         private m_fullName: string;
         private m_contactNumber: string;
         private m_emailAddress: string;
+
         // public properties (getters and setters)
         public get FullName(): string
         {
@@ -22,12 +23,12 @@ namespace core
             return this.m_contactNumber;
         }
 
-        public set ContactNumber(contactNumber: string) 
+        public set ContactNumber(contactNumber: string)
         {
             this.m_contactNumber = contactNumber;
         }
 
-        public get EmailAddress():string
+        public get EmailAddress(): string
         {
             return this.m_emailAddress;
         }
@@ -46,11 +47,11 @@ namespace core
         }
 
         // public methods
+
         /**
-         * This method converts the object's properties to a comma-seperated string
+         * This method converts the object's properties to a comma-separated string
          *
-         * @return {(string | null)}  {(string | null)}
-         * 
+         * @returns {(string | null)}
          */
         serialize(): string | null
         {
@@ -66,27 +67,26 @@ namespace core
         }
 
         /**
-         * This method seperates the data string parameter into the object's properties. 
+         * This method separates the data string parameter into the object's properties
          *
          * @param {string} data
          * @returns {void}
          */
         deserialize(data: string): void // assume that data is a comma-separated list of properties (strings)
         {
-            // Property array now becomes a string array because it has string values
-            let propertyArray = data.split(",");
+            let propertyArray: string[] = data.split(",");
             this.FullName = propertyArray[0];
             this.ContactNumber = propertyArray[1];
             this.EmailAddress = propertyArray[2];
         }
 
-
         // public overrides
 
         /**
-         * This method overrides the built-in toString method and returns a string that contains the values of the object's properties
+         * This method overrides the built-in toString method 
+         * and returns a string that contains the values of the object's properties
          * @override
-         * @return {string}
+         * @returns {string}
          */
         toString(): string
         {
@@ -94,8 +94,6 @@ namespace core
         }
     }
 
-
 }
-
 
 
